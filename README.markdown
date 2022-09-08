@@ -1,4 +1,4 @@
-# dotenv-safer [![Build Status](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml/badge.svg)](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml)
+# dotenv-safer [![Build Status](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml/badge.svg)](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml) [![Build Status](https://github.com/vincentvella/dotenv-safer/actions/workflows/ci.yaml/badge.svg)](https://github.com/vincentvella/dotenv-safer/actions/workflows/ci.yaml)
 
 Identical to [`dotenv`](https://github.com/motdotla/dotenv), but ensures that all needed environment variables are defined after reading from `.env`.
 The names of the needed variables are read from `.env.example`, which should be committed along with your project.
