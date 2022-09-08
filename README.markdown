@@ -1,18 +1,18 @@
-# dotenv-safe [![Build Status](https://travis-ci.org/rolodato/dotenv-safe.svg)](https://travis-ci.org/rolodato/dotenv-safe)
+# dotenv-safer [![Build Status](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml/badge.svg)](https://github.com/vincentvella/dotenv-safer/actions/workflows/publish.yaml)
 
 Identical to [`dotenv`](https://github.com/motdotla/dotenv), but ensures that all needed environment variables are defined after reading from `.env`.
-The names of the needed variables are read from `.env.example`, which should be commited along with your project.
+The names of the needed variables are read from `.env.example`, which should be committed along with your project.
 
-`dotenv-safe` only checks if all the needed variable names exist in `process.env` after initialising. It does not assume anything about the presence, format or validity of the values.
+`dotenv-safer` only checks if all the needed variable names exist in `process.env` after initializing. It does not assume anything about the presence, format or validity of the values.
 
 # Installation
 
 ```
-npm install --save dotenv-safe
+npm install --save dotenv-safer
 ```
 
 ```
-yarn add dotenv-safe
+yarn add dotenv-safer
 ```
 
 # Example
@@ -32,7 +32,7 @@ TOKEN=
 
 ```js
 // index.js
-require('dotenv-safe').config();
+require('dotenv-safer').config();
 ```
 
 Since the provided `.env` file does not contain all the variables defined in
@@ -44,7 +44,7 @@ MissingEnvVarsError: The following variables were defined in .env.example but ar
 Make sure to add them to .env or directly to the environment.
 
 If you expect any of these variables to be empty, you can use the allowEmptyValues option:
-require('dotenv-safe').config({
+require('dotenv-safer').config({
   allowEmptyValues: true
 });
 ```
@@ -61,7 +61,7 @@ $ TOKEN=abc KEY=xyz node index.js
 Requiring and loading is identical:
 
 ```js
-require('dotenv-safe').config();
+require('dotenv-safer').config();
 ```
 
 This will load environment variables from `.env` as usual, but will also read any variables defined in `.env.example`.
@@ -79,16 +79,16 @@ Otherwise, returns an object with the following format:
 
 If all the required variables were successfully read but an error was thrown when trying to read the `.env` file, the error will be included in the result object under the `error` key.
 
-`dotenv-safe` compares the actual environment after loading `.env` (if any) with the example file, so it will work correctly if environment variables are missing in `.env` but provided through other means such as a shell script.
+`dotenv-safer` compares the actual environment after loading `.env` (if any) with the example file, so it will work correctly if environment variables are missing in `.env` but provided through other means such as a shell script.
 
 ## Preloading
 
-You can use the `--require` (`-r`) command line option to preload dotenv-safe.
+You can use the `--require` (`-r`) command line option to preload dotenv-safer.
 By doing this, you do not need to require and load dotenv in your application code.
 This is the preferred approach when using import instead of require.
 
 ```
-$ node -r dotenv-safe/config your_script.js
+$ node -r dotenv-safer/config your_script.js
 ```
 
 [See the dotenv README for more information]((https://github.com/motdotla/dotenv#preload)).
@@ -100,7 +100,7 @@ This can be done by checking if the `CI` environment variable is defined, which 
 For example:
 
 ```js
-require('dotenv-safe').config({
+require('dotenv-safer').config({
   example: process.env.CI ? '.env.ci.example' : '.env.example'
 });
 ```
@@ -110,7 +110,7 @@ require('dotenv-safe').config({
 [Same options and methods supported by `dotenv`](https://github.com/motdotla/dotenv#options).
 
 ```js
-require('dotenv-safe').config({
+require('dotenv-safer').config({
     allowEmptyValues: true,
     example: './.my-env-example-filename'
 });

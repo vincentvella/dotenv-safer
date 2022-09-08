@@ -1,12 +1,12 @@
 {
-  "name": "dotenv-safe",
-  "version": "8.2.1",
-  "description": "Load environment variables from .env and ensure they are defined",
+  "name": "dotenv-safer",
+  "version": "1.0.0",
+  "description": "Forked from dotenv-safer - Load environment variables from .env and ensure they are defined",
   "keywords": [
     "dotenv"
   ],
   "license": "MIT",
-  "author": "Rodrigo López Dato <rolodato@rolodato.com>",
+  "author": "Vincent Vella <vincevella0@gmail.com>",
   "files": [
     "index.js",
     "config.js",
@@ -15,10 +15,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rolodato/dotenv-safe.git"
+    "url": "https://github.com/vincentvella/dotenv-safer.git"
   },
   "scripts": {
-    "pretest": "./node_modules/eslint/bin/eslint.js index.js config.js MissingEnvVarsError.js test/.",
+    "pretest": "eslint index.js config.js MissingEnvVarsError.js test/.",
     "test": "HELLO=fromTheOtherSide mocha"
   },
   "dependencies": {},
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "dotenv": "16.0.2",
     "eslint": "^6.8.0",
     "fs-extra": "^9.0.0",
     "lodash.clonedeep": "^4.5.0",

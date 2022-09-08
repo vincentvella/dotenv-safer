@@ -7,7 +7,7 @@ const MissingEnvVarsError = dotenv.MissingEnvVarsError;
 const fs = require('fs-extra');
 const clone = require('lodash.clonedeep');
 
-describe('dotenv-safe', () => {
+describe('dotenv-safer', () => {
     let originalEnvironment;
     let originalCWD;
 
