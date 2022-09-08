@@ -1,7 +1,6 @@
 name: Run Tests
 on:
-  release:
-    types: [created]
+  push
 jobs:
   build:
     runs-on: ubuntu-latest
